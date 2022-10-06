@@ -3,7 +3,6 @@ import json
 
 import app
 
-
 @pytest.fixture
 def api():
     return app.test_client()
@@ -21,7 +20,7 @@ def test_company_name_autocomplete(api):
     assert resp.status_code == 200
     assert searched_companies == [
         {"company_name": "주식회사 링크드코리아"},
-        {"company_name": "스피링크"},
+        {"company_name": "스피링크"}
     ]
 
 
@@ -42,7 +41,7 @@ def test_company_search(api):
             "태그_4",
             "태그_20",
             "태그_16",
-        ],
+        ]
     }
 
     # 검색된 회사가 없는경우 404를 리턴합니다.
